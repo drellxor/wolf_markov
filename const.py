@@ -1,0 +1,5 @@
+DATASET_PATH = 'dataset'
+PICTURES_PATH = 'pictures'
+
+ACCESS_TOKEN = ''
+GROUP_ID = 201211851
