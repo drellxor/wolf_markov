@@ -1,3 +1,5 @@
+from builtins import enumerate
+
 import markovify
 import ru2
 import os
@@ -24,7 +26,7 @@ class MarkovWolf:
             file = os.path.join(dataset_path, item)
             if not os.path.isfile(file):
                 continue
-            with open(file, 'r') as f:
+            with open(file, 'r', encoding='utf8') as f:
                 model = POSifiedText(f.read())
             models.append(model)
         self.__model = markovify.combine(models)
@@ -34,7 +36,7 @@ class MarkovWolf:
             file = os.path.join(pictures_path, item)
             if not os.path.isfile(file):
                 continue
-            with open(file, 'r') as f:
+            with open(file, 'r', encoding='utf8') as f:
                 pics += f.readlines()
         self.__pics = pics
 

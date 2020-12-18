@@ -4,3 +4,5 @@ pymorphy2==0.8
 vk_api>=11.9.1
 requests>=2.25.1
 schedule==0.6.0
+python-dotenv>=0.15
+argparse>=1.4.0

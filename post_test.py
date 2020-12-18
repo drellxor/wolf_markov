@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # uploader = vk_api.upload.VkUpload(api)
     # result = uploader.photo_wall([pic], group_id=201211851)
 
-    wolf = MarkovWolf('dataset', 'pictures')
+    wolf = MarkovWolf('dataset_wolf', 'pictures_wolf')
     quote, pic = wolf.make_quote()
     pass
 
