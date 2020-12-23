@@ -22,7 +22,7 @@ def post_quote(wolf: MarkovWolf, session: vk_api.VkApi):
 
 
 if __name__ == '__main__':
-    wolf = MarkovWolf(c.DATASET_PATH, c.PICTURES_PATH)
+    wolf = MarkovWolf(c.DATASET_PATHS, c.DATASET_WEIGHTS, c.PICTURES_PATHS)
     session = vk_api.VkApi(token=c.ACCESS_TOKEN)
 
     schedule.every(c.POST_PERIOD).minutes.do(post_quote, wolf=wolf, session=session)
