@@ -1,5 +1,3 @@
-from builtins import enumerate
-
 import markovify
 import ru2
 import os
@@ -50,8 +48,14 @@ class MarkovWolf:
             quote = self.__model.make_sentence()
         quote = quote.replace(' ,', ',').replace(' .', '.')
 
-        r = requests.get(random.choice(self.__pics))
-        while not r.content:
-            r = requests.get(random.choice(self.__pics))
+        r = self.__get_pic()
+        while r is None or not r.content:
+            r = self.__get_pic()
         pic = BytesIO(r.content)
         return quote, pic
+
+    def __get_pic(self):
+        try:
+            return requests.get(random.choice(self.__pics))
+        except requests.ConnectionError:
+            return None

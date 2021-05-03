@@ -16,4 +16,4 @@ PICTURES_PATHS = args.pictures
 ACCESS_TOKEN = args.access_token
 GROUP_ID = args.group_id
 
-POST_PERIOD=args.post_period
+POST_PERIOD = args.post_period
